@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun May 16 12:46:19 2021
+
+@author: Fatima
+"""
+
+from tkinter import *
+
+#Uncomment the following line if you have MacOS
+#Ask the student to write the following line if the student has MacOS
+
+#from tkmacosx import *
+
+root=Tk()
+root.title("Ascii")
+
+root.geometry("400x400")
+root.configure(background = 'snow')
+
+
+
+enter_word = Entry(root)
+enter_word.place(relx=0.5,rely=0.4,anchor=CENTER)
+
+label = Label(root, text = "Name in Ascii : ", bg="light yellow", fg="black")
+
+def asciiConverter():
+    input_word = enter_word.get()
+
+    for letter in input_word :
+        encrypt=int(ord(letter)+4)
+        label["text"] += str(chr(encrypt))
+        
+btn=Button(root,text="Show name in Ascii",command=asciiConverter, bg='gold', fg = 'black')
+btn.place(relx=0.5,rely=0.5,anchor=CENTER)
+
+label.place(relx=0.5,rely=0.6,anchor=CENTER)
+
+root.mainloop()
+
+    
