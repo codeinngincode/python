@@ -1,0 +1,52 @@
+
+#add tkinter basic template
+from tkinter import *
+root=Tk()
+root.title("Licence CARD PLEASE DO NOT ABUSE")
+root.geometry("500x400")
+
+
+root.configure(bg="white")
+canvas = Canvas(root, width=500, height=400)
+canvas.create_image(0, 0, anchor=NW)
+canvas.create_rectangle(0, 0, 500, 27.5, fill="#1463B0")
+canvas.create_rectangle(0, 340, 500, 300, fill="#1463B0")
+
+label_heading = canvas.create_text(150, 90, font=('Times', '24', 'bold italic'), text="License Card")
+label_name_tag = canvas.create_text(40, 165, font=('Times', '16', 'bold'), text="Name :")
+label_grade_tag = canvas.create_text(40, 205, font=('Times', '16', 'bold'), text="DOB :")
+label_subjects_tag = canvas.create_text(50, 250, font=('Times', '16', 'bold'), text="DATE OF CREATION AND EXPIREATION :")
+
+#add label for name
+label_name=Label(root)
+#add label for grade
+label_grade=Label(root)
+#add label for Subjects
+label_subjects=Label(root)
+
+#add function
+def mycard():
+    name="nextro"
+    print(type(name))
+    
+    grade="2001/9/10"
+    print(type(grade))
+    
+    subjects=["1460/1/1","2981/1/1"]
+    print(type(subjects))
+    
+    label_grade['text']=grade
+    label_name['text']=name
+    label_subjects["text"]=subjects
+
+#add button
+button1=Button(root,text="show my licence",command=mycard)
+button1.configure(width=20, activebackground="#9EC6EE", relief=FLAT)
+button1_window = canvas.create_window(150, 280, anchor=CENTER, window=button1)
+label_name_window = canvas.create_window(120, 165, anchor=CENTER, window=label_name)
+label_grade_window = canvas.create_window(90, 205, anchor=CENTER, window=label_grade)
+label_subjects_window = canvas.create_window(255, 252, anchor=CENTER, window=label_subjects)
+canvas.pack()
+
+#tkinter basic template end statement
+root.mainloop()
