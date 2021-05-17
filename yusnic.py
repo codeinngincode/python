@@ -18,7 +18,7 @@ rpl=["shoes","pizza","burger","bbq kit","laptop","tent","flares","emergence flar
 
 
 def rl():
-    rL=random.sample(range(0,11),1)
+    rL=random.randint(0,11)
     rlf=rpl[rL]
     isl["text"]="items "+str(rlf)
     print(str(rL))
