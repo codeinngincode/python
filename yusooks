@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jul  1 18:20:11 2021
+
+@author: Fatima
+"""
+
+class book_shelf:
+    def __init__(self,name,author, price, publishing_year):
+        
+        self.book_name = name
+        #do the same for author, price, publishing year
+        self.book_author = author
+        self.book_price = price
+        self.book_publishing_year = publishing_year
+        
+    def add_book(self):
+        print("Book Name: "+self.book_name)
+        #print the same for author, price, publishing year
+        print("Book author: "+self.book_author)
+        print("Book price: "+str(self.book_price))
+        print("Book was published in : "+str(self.book_publishing_year))
+        print("Book Added")
+    
+    def years_since_published(self):
+        years_ago_published = 2020 - self.book_publishing_year
+        print("This book was published "+str(years_ago_published)+" years ago")
+        
+        
+Book1 = book_shelf("Nerfwars The Beginning","made in collaberation with yusuf yahya and ibrahim",2021,2020)
+Book1.add_book()
+Book1.years_since_published()
+
+#create an object for Book2 with class Bookshelf
+Book2 = book_shelf("Nerfwars The War For Earth","made in collaberation with yusuf yahya and ibrahim",2021,2020)
+Book2.add_book()
+Book2.years_since_published()
+
+#call the function add_book() for book2
+
+#call the function years since published fro book2
