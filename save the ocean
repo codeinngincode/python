@@ -1,0 +1,84 @@
+from tkinter import *
+root = Tk()
+root.geometry("600x600")
+
+percentage_GRAD_3_label = Label(root)
+percentage_GRAD_5_label = Label(root)
+percentage_GRAD_100_label = Label(root)
+#create two labels for grade 5 and 10
+
+
+class GRAD_3():
+    def __init__(self,  language_arts, mathematics):
+        self.language_arts = language_arts
+        self.mathematics = mathematics
+    def percentage(self): 
+        #add the values self.language_arts and self.mathematics and store it in a variable "total_marks"
+        total_marks = self.language_arts+self.mathematics
+        #convert the total marks to percentage, multiply total_marks by 100
+        total_marks_with_100 = total_marks*100
+        #divide the total_marks_with_100 by 200
+        GRAD_3_percentage = total_marks_with_100/200
+        percentage_GRAD_3_label["text"] = GRAD_3_percentage
+        
+class GRAD_5():
+    def __init__(self,  language_arts, mathematics,social_studies):
+        self.language_arts = language_arts
+        self.mathematics = mathematics
+        self.social_studies = social_studies
+    def percentage(self):
+        #do the same thing did for grade 3
+                #add the values self.language_arts and self.mathematics and store it in a variable "total_marks"
+        total_marks = self.language_arts+self.mathematics+self.social_studies
+        #convert the total marks to percentage, multiply total_marks by 100
+        total_marks_with_100 = total_marks*1000
+        #divide the total_marks_with_100 by 200
+        GRAD_5_percentage = total_marks_with_100/3000
+        percentage_GRAD_5_label["text"] = GRAD_5_percentage
+        
+class GRAD_10():
+    #create __init__() and pass atleast 5 subjects inside (). Refer line number 23
+     def __init__(self,  language_arts, mathematics,social_studies,Scientific_Thinking,English_Language_and_Literature):
+        self.language_arts = language_arts
+        self.mathematics = mathematics
+        self.social_studies = social_studies 
+        self.English_Language_and_Literature = English_Language_and_Literature
+        self.Scientific_Thinking = Scientific_Thinking
+        
+     def percentage(self):
+        #do the same thing did for grade 3
+                #add the values self.language_arts and self.mathematics and store it in a variable "total_marks"
+        total_marks = self.language_arts+self.mathematics+self.social_studies+self.English_Language_and_Literature+self.Scientific_Thinking
+        #convert the total marks to percentage, multiply total_marks by 100
+        total_marks_with_100 = total_marks*1000
+        #divide the total_marks_with_100 by 200
+        GRAD_10_percentage = total_marks_with_100/5000
+        percentage_GRAD_10_label["text"] = GRAD_10_percentage
+        
+        
+        
+        
+
+object_GRAD_3 = GRAD_3(40,50)
+GRAD_3_btn=Button(root,text="GRAD 3",command=object_GRAD_3.percentage)
+GRAD_3_btn.pack(padx=20, pady =20)
+percentage_GRAD_3_label.pack(padx=20, pady =20)
+object_GRAD_5 = GRAD_5(40,50,60)
+GRAD_5_btn=Button(root,text="GRAD 5",command=object_GRAD_5.percentage)
+GRAD_5_btn.pack(padx=20, pady =20)
+percentage_GRAD_5_label.pack(padx=20, pady =20)
+object_GRAD_10 = GRAD_10(40,50,60,70,80)
+GRAD_10_btn=Button(root,text="GRAD 10",command=object_GRAD_10.percentage)
+GRAD_10_btn.pack(padx=20, pady =20)
+percentage_GRAD_100_label.pack(padx=20, pady =20)
+
+
+
+#repeat the same as line number 39 to 42 for grade 5 and 10.
+
+
+
+
+
+
+root.mainloop()
