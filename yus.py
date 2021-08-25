@@ -46,7 +46,7 @@ class game:
     def __update_score(self, input_value):
         
         #write an if condition to check if the input_value is equal to the List's(self.color) index value(self.random_number_for_color)
-        if(input_value==self.color[random_number_for_color]):
+        if(input_value==self.color[self.random_number_for_color]):
             print(self.color[self.random_number_for_color])
             
             #update the private variable __score by adding random number(0,10) to it
@@ -73,13 +73,13 @@ def getInput():
     #call the function updateGame
     bored.updateGame()
     #clear the text inout "input_value" to keep it empty for next entry using delete()
-    input_value.delete(0,END)
+    input_value.delete()
 
 #call the function getInput for the button click
 btn = Button(root, text="CHECK" ,command=getInput, bg="IndianRed1", fg="white", relief=FLAT,  padx=10, pady=1,  font=("Arial",15))
 btn.place(relx=0.35,rely=0.65, anchor= CENTER)
 
 #call the function updateGame for the button click
-btn = Button(root, text="START" ,command=bored.updateGame , bg="dark olive green", fg="white", relief=FLAT,  padx=10, pady=1,  font=("Arial",15))
+btn = Button(root, text="START" ,command=bored.__updateGame , bg="dark olive green", fg="white", relief=FLAT,  padx=10, pady=1,  font=("Arial",15))
 btn.place(relx=0.65,rely=0.65, anchor= CENTER)
 root.mainloop()
