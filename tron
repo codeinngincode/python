@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Sep  1 19:22:02 2021
+
+@author: Fatima
+"""
+
+from tkinter import *
+from tkinter import ttk
+#import Translator, LANGUAGES modules of googletrans
+from googletrans import Translator, LANGUAGES
+
+root = Tk()
+root.geometry('1080x400')
+root.config(bg = '#F2CCC3')
+root.title("Language Translator")
+
+language = list(LANGUAGES.values())
+title_label = Label(root, text = "LANGUAGE TRANSLATOR", bg='#F2CCC3',font=("Sylfaen",18,"bold","italic"))
+#place title_label in x position 0.5 and y position 0.1, alignment CENTER
+title_label.place(relx=0.5,rely=0.1, anchor=CENTER)
+
+
+input_label = Label(root,text ="Enter Text", font = 'arial 13 bold', bg ='#F2CCC3')
+#place input_label in x position 0.02 and y position 0.2, alignment west
+input_label.place( relx=0.02 ,rely=0.2, anchor=W)
+
+#set the dropdown state as "readonly"
+src_lang = ttk.Combobox(root, values= language, width =22, state="readonly")
+#place src_lang in x position 0.13 and y position 0.2, alignment west
+src_lang.place( relx=0.13 ,rely=0.2, anchor=W)
+#set the src_lang as 'english'
+src_lang.set('english')
+
+
+output_label = Label(root,text ="Output", font = 'arial 13 bold', bg ='#F2CCC3')
+#place output_label in x position 0.81 and y position 0.2, alignment east
+output_label.place(relx=0.7 ,rely=0.2, anchor=E)
+
+#set the dropdown state as "readonly"
+dest_lang = ttk.Combobox(root, values= language, width =22, state="readonly")
+#place dest_lang in x position 0.98 and y position 0.2, alignment east
+dest_lang.place( relx=0.98 ,rely=0.2, anchor=E)
+#set the dest_lang as 'choose output language'
+dest_lang.set('choose output language')
+
+Input_text = Text(root,font = 'arial 10', height = 11, wrap = WORD, padx=5, pady=5, width = 60, bg="#FFFCF9", bd=0)
+#place Input_text in x position 0.02 and y position 0.5, alignment west
+Input_text.place(relx=0.02 ,rely=0.5, anchor=W)
+
+Output_text = Text(root,font = 'arial 10', height = 11, wrap = WORD, padx=5, pady= 5, width =60, bg="#FFFCF9", bd=0)
+#place Output_text in x position 0.98 and y position 0.5, alignment east
+Output_text.place(relx=0.98 ,rely=0.5, anchor=E)
+
+
+trans_btn = Button(root, text = 'Translate',font = 'arial 12 bold',pady = 5, bg = '#E78F8E', activebackground = '#95A3A4',relief = FLAT)
+#place trans_btn in x position 0.5 and y position 0.85, alignment CENTER
+trans_btn.place(relx=0.5,rely=0.85, anchor=CENTER)
+
+root.mainloop()  
